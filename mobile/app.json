@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "AushNexa",
+    "slug": "aushnexa",
+    "scheme": "aushnexa",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "org.aushnexa.app"
+    },
+    "android": {
+      "package": "org.aushnexa.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#7C9871",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "AushNexa listens when you describe your symptoms, so it can turn your words into text."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "AushNexa reads the prescription or medicine strip photo you choose.",
+          "cameraPermission": "AushNexa uses the camera to photograph your prescription or medicine strip."
+        }
+      ],
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "backgroundColor": "#ECEEE9"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}

@@ -1,39 +1,22 @@
 # Python
 __pycache__/
 *.pyc
-*.pyo
 *.egg-info/
-dist/
-build/
-
-# Virtual environments
 .venv/
 venv/
-env/
+.pytest_cache/
 
-# Environment files with secrets
+# Secrets
 .env
-.streamlit/secrets.toml
+.env.local
 
-# SQLite databases
+# Backend runtime data (SQLite store, Gemma response cache, uploaded photos)
 *.db
+backend/cache/
 
-# OS files
+# OS / editors
 .DS_Store
 Thumbs.db
-
-# IDE
 .idea/
 .vscode/
 *.swp
-*.swo
-
-# pytest cache
-.pytest_cache/
-
-# Application cache
-cache/
-
-# Nested git repos (tracked as regular dirs)
-code/aushnexa/.git
-code/_data_src/Indian-Medicine-Dataset/.git
