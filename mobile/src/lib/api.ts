@@ -166,14 +166,18 @@ export type Transcript = { text: string; language: string | null; seconds: numbe
 
 // ---------------------------------------------------------------- base URL
 
-/** The API runs on port 8000 of the computer that serves the app. In Expo Go that is the dev server's
- *  LAN address, so a phone on the same Wi-Fi finds the backend without any setup. */
+/** Where the API is, with no setup:
+ *  - website build: the backend serves the page, so the API is on the same origin (also behind a tunnel);
+ *  - web in development: the Expo dev server serves the page and the backend runs beside it on port 8000;
+ *  - Expo Go: port 8000 on the dev server's LAN address, so a phone on the same Wi-Fi finds it. */
 export function defaultApiUrl(): string {
   const fromEnv = process.env.EXPO_PUBLIC_API_URL;
   if (fromEnv) return fromEnv.replace(/\/$/, '');
+  if (Platform.OS === 'web' && typeof window !== 'undefined') {
+    return __DEV__ ? `${window.location.protocol}//${window.location.hostname}:8000` : window.location.origin;
+  }
   const hostUri = Constants.expoConfig?.hostUri;
   if (hostUri) return `http://${hostUri.split(':')[0]}:8000`;
-  if (Platform.OS === 'web' && typeof window !== 'undefined') return `${window.location.protocol}//${window.location.hostname}:8000`;
   return Platform.OS === 'android' ? 'http://10.0.2.2:8000' : 'http://localhost:8000';
 }
 

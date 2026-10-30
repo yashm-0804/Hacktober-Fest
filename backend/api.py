@@ -2,6 +2,9 @@
 
 Run:  uvicorn api:app --host 0.0.0.0 --port 8000
 
+If the web app has been built (cd mobile && npx expo export --platform web), the same server also serves it,
+so the whole app opens at http://localhost:8000 (see run-website.sh at the repository root).
+
 Slow work (Gemma reads can take 40-200 s) runs as a background job: POST returns {"job_id"} at once and
 the app polls GET /api/jobs/{id}, which reports each pipeline step as it happens. Everything else is
 plain request/response over the same SQLite store (core/store.py).
@@ -28,7 +31,7 @@ from core.testlab import run_cases
 ROOT = Path(__file__).resolve().parent
 DEMO = ROOT / "demo_assets"
 DEMO_FILES = {"prescription.jpg", "strip.jpg"}
-DEMO_TYPED = "Dolo 650 TDS x 5 days\nCombiflam SOS\nAugmentin 625 Duo BD x 5 days\nCalcimax OD x 3 months"
+WEB_DIR = Path(os.environ.get("WEB_DIR") or ROOT.parent / "mobile" / "dist")
 MAX_UPLOAD = 15 * 1024 * 1024
 MAX_TEXT = 2000
 
@@ -165,7 +168,8 @@ def _settings() -> dict:
     ollama_model = os.environ.get("OLLAMA_MODEL") or "gemma4:e4b"
     return {**llm.backend_info(),
             "fallback_to_local": os.environ.get("GEMMA_FALLBACK", "").strip().lower() == "ollama",
-            "gemini_key_set": bool(os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")),
+            "gemini_key_set": (os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or "")
+                              not in ("", "your-ai-studio-key"),  # the old .env.example placeholder
             "options": [{"id": "gemini", "label": "Gemini API", "model": gemini_model},
                         {"id": "ollama", "label": "Local Ollama", "model": ollama_model}]}
 
@@ -183,10 +187,10 @@ def put_settings(body: SettingsIn):
 
 @app.get("/api/demo")
 def demo():
-    ctx, al = DEMO / "context.txt", DEMO / "allergies.txt"
+    ctx, al, typed = DEMO / "context.txt", DEMO / "allergies.txt", DEMO / "typed_rx.txt"
     return {"context": ctx.read_text().strip() if ctx.exists() else "",
             "allergies": al.read_text().strip() if al.exists() else "penicillin",
-            "typed_rx": DEMO_TYPED,
+            "typed_rx": typed.read_text().strip() if typed.exists() else "",
             "prescription_url": "/api/demo/prescription.jpg", "strip_url": "/api/demo/strip.jpg"}
 
 
@@ -419,3 +423,21 @@ def resolve(eid: int, body: ResolveIn):
         store.resolve(eid, resolution)
     store.add_message(eid, "doctor", f"Confirmed: {name or free}")
     return _esc_summary(_get_escalation(eid))
+
+
+# ---------------------------------------------------------------- website (must stay last)
+
+@app.get("/{path:path}", include_in_schema=False)
+def website(path: str):
+    """The exported web app, when built. Other paths fall back to index.html so deep links such as /report or
+    /doctor/3 open the right screen."""
+    if path == "api" or path.startswith("api/"):
+        raise HTTPException(404, "Not found.")
+    root = WEB_DIR.resolve()
+    index = root / "index.html"
+    if not index.is_file():
+        raise HTTPException(404, "The website is not built yet. Run: cd mobile && npx expo export --platform web")
+    target = (root / path).resolve()
+    if path and target.is_file() and target.is_relative_to(root):
+        return FileResponse(target)
+    return FileResponse(index)

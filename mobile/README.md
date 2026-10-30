@@ -15,7 +15,7 @@ npx expo start
 ```
 
 - **Phone:** scan the QR code with Expo Go. The phone must be on the same Wi-Fi as the computer.
-- **Web preview:** press `w`.
+- **Web preview:** press `w`. For a demo, use `../run-website.sh` instead: it builds the website and serves it with the API at `http://localhost:8000`.
 - **Android emulator / iOS simulator:** press `a` / `i`.
 
 ### Finding the backend
@@ -24,7 +24,7 @@ The app looks for the API in this order:
 
 1. `EXPO_PUBLIC_API_URL`, if set (for example, `EXPO_PUBLIC_API_URL=http://192.168.1.10:8000 npx expo start`).
 2. The Expo dev server's LAN address on port 8000. In Expo Go this works with no setup.
-3. On the web, the page's own host on port 8000.
+3. On the web: the page's own address for the website build (the backend serves it), or port 8000 next to the Expo dev server.
 
 You can change the address any time in **Settings → AushNexa server**, then tap *Save and test*.
 
@@ -53,7 +53,8 @@ The visual language follows the design reference: sage greens on warm stone, ove
 ```
 src/app/          routes (Expo Router)
 src/components/   ui.tsx (cards, buttons, chips), charts.tsx (SVG charts), chrome.tsx (logo, top bar,
-                  tab bar, green backdrop, pulse button), ChatThread.tsx
+                  tab bar, green backdrop, pulse button), ChatThread.tsx, WebFrame.web.tsx (phone frames
+                  and the side-by-side Doctor Console on wide browser screens)
 src/lib/          api.ts (typed client), store.tsx (app state, persisted with AsyncStorage),
                   theme.ts (colours, fonts), format.ts (labels, insights, summaries)
 ```

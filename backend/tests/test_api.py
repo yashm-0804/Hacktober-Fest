@@ -171,3 +171,24 @@ def test_unknown_ids(client):
     assert client.get("/api/cases/999").status_code == 404
     assert client.get("/api/escalations/999").status_code == 404
     assert client.get("/api/jobs/nope").status_code == 404
+
+
+def test_website_is_served_with_spa_fallback(client, tmp_path, monkeypatch):
+    web = tmp_path / "dist"
+    (web / "_expo").mkdir(parents=True)
+    (web / "index.html").write_text("<html>app</html>")
+    (web / "_expo" / "app.js").write_text("console.log(1)")
+    (tmp_path / "secret.txt").write_text("nope")
+    monkeypatch.setattr(api, "WEB_DIR", web)
+    assert client.get("/").text == "<html>app</html>"
+    assert client.get("/doctor/3").text == "<html>app</html>"  # deep link -> the app's router
+    assert client.get("/_expo/app.js").text == "console.log(1)"
+    assert "nope" not in client.get("/..%2Fsecret.txt").text
+    assert client.get("/api/nope").status_code == 404  # unknown API paths stay JSON 404s
+    assert client.get("/api/health").json()["ok"] is True
+
+
+def test_website_not_built(client, tmp_path, monkeypatch):
+    monkeypatch.setattr(api, "WEB_DIR", tmp_path / "missing")
+    r = client.get("/")
+    assert r.status_code == 404 and "expo export" in r.json()["detail"]

@@ -33,9 +33,11 @@ Indian prescriptions are handwritten and full of brand names. Two brands can hid
 ## Repository layout
 
 ```
-backend/   Python: FastAPI REST API over the core engine (Gemma 4, matching, safety rules, Whisper)
-mobile/    Expo / React Native app (iOS, Android, and web for previews)
-docs/      Screenshots
+backend/          Python: FastAPI REST API over the core engine (Gemma 4, matching, safety rules, Whisper);
+                  also serves the website build
+mobile/           Expo / React Native app (iOS, Android and web)
+run-website.sh    Build the web app and serve everything at http://localhost:8000
+docs/             Screenshots
 ```
 
 ```mermaid
@@ -51,16 +53,36 @@ flowchart LR
 
 ## Quick start
 
-You need Python 3.12 and Node.js 22 (the versions this was tested with).
+You need Python 3.12 and Node.js 22 (the versions this was tested with). On a Mac: `brew install python@3.12 node`.
+
+### Show it on a website (for demos and judging)
+
+One command builds the app for the browser and serves it, together with the API, at **http://localhost:8000**:
+
+```bash
+./run-website.sh
+```
+
+The first run installs everything, which takes a few minutes; after that it starts in seconds. It opens your browser when ready. Stop it with `Ctrl+C`.
+
+![The showcase page: patient app and Doctor Console side by side](docs/showcase.jpg)
+
+- **On a laptop or projector**, the page shows the app in a phone frame. On a wide screen, a second phone runs the **Doctor Console**, so you can demo the whole ask-a-doctor loop side by side. Press `Cmd+Ctrl+F` for full screen.
+- **On a phone's browser**, the app fills the screen.
+- **Gemini key:** open `backend/.env` and paste your key after `GEMINI_API_KEY=` (get one at [aistudio.google.com/apikey](https://aistudio.google.com/apikey)). Without it, photos can't be read, but the typed demo and every code check still work.
+- **Make the photo demo instant:** a photo read through the Gemini API can take 40–200 s. Run `./run-website.sh --warm` once beforehand. It runs the demo case through Gemma and caches the answers, so during judging the same demo comes straight from the cache.
+- **Optional public link:** so judges can open it on their own phones, run `brew install cloudflared`, then `cloudflared tunnel --url http://localhost:8000` in a second terminal. It prints an `https://….trycloudflare.com` address. The app has no login, so stop the tunnel when you're done.
+
+### Run it on a phone (Expo Go)
 
 **1. Backend** (from `backend/`):
 
 ```bash
-python -m venv .venv && .venv/bin/pip install -r requirements.txt
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 ```
 
 ```bash
-cp .env.example .env    # then add your GEMINI_API_KEY from aistudio.google.com/apikey
+cp .env.example .env    # then paste your key after GEMINI_API_KEY=
 ```
 
 ```bash
@@ -77,7 +99,7 @@ npm install
 npx expo start
 ```
 
-Scan the QR code with **Expo Go** on a phone that is on the same Wi-Fi as your computer. The app finds the backend automatically, at your computer's address on port 8000. Press `w` to open the web preview instead.
+Scan the QR code with **Expo Go** on a phone that is on the same Wi-Fi as your computer. The app finds the backend automatically, at your computer's address on port 8000. Press `i` for the iPhone Simulator (needs Xcode) or `w` for a browser.
 
 No Gemini key yet? Choose **Type it** on the New check screen: typed prescriptions don't need Gemma to be read, and every code safety check still runs.
 
@@ -86,7 +108,7 @@ No Gemini key yet? Choose **Type it** on the New check screen: typed prescriptio
 1. On the Overview, tap **Try the demo case**. This loads a synthetic prescription (fictional doctor and patient) with a penicillin allergy.
 2. Analyze it. You get a **duplicate paracetamol** alert (Dolo 650 + Combiflam), a **penicillin allergy** alert (Augmentin contains amoxicillin), and Calcimax flagged as **Please confirm** because of its look-alike.
 3. Open Calcimax and tap **Ask a doctor**.
-4. On a second phone or browser tab, open **Settings → Doctor Console**, reply in the chat, and confirm *Calcimax ISO Capsule*. The patient's chat and report update within a few seconds.
+4. In the Doctor Console (the right-hand phone on the showcase page, or **Settings → Doctor Console** on a second device), reply in the chat and confirm *Calcimax ISO Capsule*. The patient's chat and report update within a few seconds.
 
 ## How Gemma 4 is used
 
@@ -100,7 +122,7 @@ The details, and evidence from tests on real handwritten prescriptions, are in [
 ## Tests and checks
 
 ```bash
-cd backend && .venv/bin/python -m pytest -q          # 132 offline tests (set RUN_LIVE=1 to also call Gemma)
+cd backend && .venv/bin/python -m pytest -q          # 134 offline tests (set RUN_LIVE=1 to also call Gemma)
 ```
 
 ```bash

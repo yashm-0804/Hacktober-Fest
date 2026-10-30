@@ -13,6 +13,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { WebFrame } from '@/components/WebFrame';
 import { AppProvider, useApp } from '@/lib/store';
 import { colors } from '@/lib/theme';
 
@@ -36,11 +37,13 @@ function Root() {
   return (
     <>
       <StatusBar style="dark" />
-      <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg } }}>
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="scan" options={{ presentation: 'modal' }} />
-        <Stack.Screen name="analyzing/[job]" options={{ gestureEnabled: false }} />
-      </Stack>
+      <WebFrame>
+        <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: colors.bg } }}>
+          <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="scan" options={{ presentation: 'modal' }} />
+          <Stack.Screen name="analyzing/[job]" options={{ gestureEnabled: false }} />
+        </Stack>
+      </WebFrame>
     </>
   );
 }

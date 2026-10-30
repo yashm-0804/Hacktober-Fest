@@ -114,6 +114,7 @@ export function friendlyErrors(errors: string[]): string {
 }
 
 export function gemmaReason(error: string): string {
+  if (/API_KEY_INVALID|API key not valid/i.test(error)) return 'the Gemini API key in backend/.env was rejected';
   if (error.includes('GEMINI_API_KEY')) return 'the server has no Gemini API key';
   if (/Ollama not reachable/i.test(error)) return 'local Ollama is not running';
   return 'Gemma 4 did not answer in time';

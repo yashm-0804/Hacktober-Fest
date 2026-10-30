@@ -1,10 +1,12 @@
-"""Warm the Gemma disk cache (cache/llm/) for the demo assets, so the live demo is instant.
+"""Warm the Gemma disk cache (cache/llm/) for the demo case, so the live demo answers instantly.
 
-Usage: .venv/bin/python scripts/warm_cache.py
-Runs read_prescription, read_strip and assess_context on demo_assets/*; skips any missing file.
-       .venv/bin/python scripts/warm_cache.py --assets /path/to/demo_assets
-Uses whatever LLM_BACKEND is set (default from .env). Run it again: every step should report cache_hit=True.
-Warm-up is not user-facing, so it waits longer than the UI: GEMMA_TIMEOUT_S=200, GEMMA_BUDGET_S=420 unless set.
+Usage: .venv/bin/python scripts/warm_cache.py [--assets /path/to/demo_assets]
+
+Runs the same pipeline.analyze() calls the app makes for "Load the demo case": once with the prescription
+photo and once with the typed lines, both with the strip photo. Because the inputs are identical, the app's
+Gemma calls then hit the cache. Uses whatever LLM_BACKEND is set (default from .env). Run it again: every
+Gemma step should say "cached". Warm-up is not user-facing, so it waits longer than the app:
+GEMMA_TIMEOUT_S=200, GEMMA_BUDGET_S=420 unless set.
 """
 import os
 import sys
@@ -17,57 +19,43 @@ sys.path.insert(0, str(ROOT))
 os.environ.setdefault("GEMMA_TIMEOUT_S", "200")
 os.environ.setdefault("GEMMA_BUDGET_S", "420")
 
-from core import llm, match  # noqa: E402
+from core import llm, pipeline  # noqa: E402
 
 ASSETS = Path(sys.argv[sys.argv.index("--assets") + 1]) if "--assets" in sys.argv else ROOT / "demo_assets"
 
 
-def _show(label: str, res: dict, secs: float) -> None:
-    hits = [t.get("cache_hit") for t in res.get("_trace", [])]
-    status = "ERROR " + res["error"] if "error" in res else "ok"
-    print(f"{label:20} {secs:7.2f}s  cache_hit={hits[-1] if hits else None}  attempts={len(hits)}  {status}", flush=True)
+def _read(name: str) -> str:
+    path = ASSETS / name
+    return path.read_text(encoding="utf-8").strip() if path.exists() else ""
+
+
+def _run(label: str, **inputs) -> bool:
+    t = time.time()
+    case = pipeline.analyze(_read("context.txt"), _read("allergies.txt"), **inputs)
+    print(f"\n{label}: {time.time() - t:.1f}s, {len(case['meds'])} medicines", flush=True)
+    for step in case["_trace"]:
+        if step["backend"] in ("python", "code"):
+            continue
+        state = f"ERROR {step['error']}" if step["error"] else ("cached" if step["cache_hit"] else "ok")
+        print(f"   {step['step']:40} {step['seconds']:7.2f}s  {state}")
+    for m in case["meds"]:
+        print(f"   [{m['index']}] {m['read'].get('brand_or_drug')!s:24} -> {(case['resolved'][m['index']]['label'])!s:28} "
+              f"{m['confidence']['band']}")
+    for e in case["errors"]:
+        print(f"   ! {e}")
+    return not case["errors"]
 
 
 def main() -> int:
     print(f"backend: {llm.backend_info()}  assets: {ASSETS}")
-    rx_path, strip_path, ctx_path = ASSETS / "prescription.jpg", ASSETS / "strip.jpg", ASSETS / "context.txt"
+    rx, strip = ASSETS / "prescription.jpg", ASSETS / "strip.jpg"
+    strip_bytes = strip.read_bytes() if strip.exists() else None
     ok = True
-    meds = []
-
-    if rx_path.exists():
-        t = time.time()
-        rx = llm.read_prescription(rx_path.read_bytes())
-        _show("read_prescription", rx, time.time() - t)
-        ok &= "error" not in rx
-        for i, m in enumerate(rx.get("medicines", [])):
-            print(f"   [{i}] {m['brand_or_drug']!s:24} strength={m['strength']} dose={m['dose_and_frequency']} unsure={m['unsure']}")
-            cands = match.candidates(m["brand_or_drug"], m.get("strength"), k=3)
-            meds.append({"index": i, "raw_text": m["raw_text"],
-                         "candidates": [{"name": c["name"], "salts": c.get("salts"), "desc": c.get("desc", "")} for c in cands]})
-    else:
-        print(f"skip read_prescription: {rx_path} missing")
-
-    if strip_path.exists():
-        t = time.time()
-        st = llm.read_strip(strip_path.read_bytes())
-        _show("read_strip", st, time.time() - t)
-        ok &= "error" not in st
-        print(f"   {st.get('brand_or_drug')} {st.get('strength')}")
-    else:
-        print(f"skip read_strip: {strip_path} missing")
-
-    if ctx_path.exists() and meds:
-        t = time.time()
-        ac = llm.assess_context(ctx_path.read_text(encoding="utf-8").strip(), meds)
-        _show("assess_context", ac, time.time() - t)
-        ok &= "error" not in ac
-        for f in ac.get("fit", []):
-            print(f"   [{f['index']}] {f['candidate']!s:28} {f['fits']:8} {f['reason']}")
-        print("   hindi:", ac.get("hindi_summary"))
-    else:
-        print("skip assess_context: " + ("no medicines read" if ctx_path.exists() else f"{ctx_path} missing"))
-
-    print("ALL OK" if ok else "SOME STEPS FAILED (re-run to retry; successes are cached)")
+    if rx.exists():
+        ok &= _run("Demo photo", rx_image=rx.read_bytes(), strip_image=strip_bytes)
+    if _read("typed_rx.txt"):
+        ok &= _run("Demo typed", rx_text=_read("typed_rx.txt"), strip_image=strip_bytes)
+    print("\nALL OK" if ok else "\nSOME STEPS FAILED (run it again to retry; successes are cached)")
     return 0 if ok else 1
 
 

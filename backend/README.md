@@ -20,6 +20,8 @@ cp .env.example .env    # add your GEMINI_API_KEY from aistudio.google.com/apike
 
 `--host 0.0.0.0` lets a phone on the same Wi-Fi reach it. Interactive API docs are at `http://localhost:8000/docs`.
 
+If the web app has been built (`cd ../mobile && npx expo export --platform web`, or just use `../run-website.sh`), the same server also serves it at `http://localhost:8000`, so the API and the website share one address.
+
 `data/medicines.csv.gz` is prebuilt. The first transcription downloads the Whisper `base` weights (about 140 MB). For the local open-weights model, run `ollama pull gemma4:e4b` and switch to *Local Ollama* in the app's Settings (or set `LLM_BACKEND=ollama`).
 
 ### Configuration (`.env`)
@@ -35,6 +37,7 @@ cp .env.example .env    # add your GEMINI_API_KEY from aistudio.google.com/apike
 | `WHISPER_MODEL` | `base` | Whisper size; `small` is better for Hindi |
 | `APP_DB` | `app.db` | SQLite file for cases and doctor chats |
 | `CORS_ORIGINS` | `*` | Allowed origins for the web preview |
+| `WEB_DIR` | `../mobile/dist` | Where the built website is served from |
 
 ## API
 
@@ -59,6 +62,7 @@ Slow work runs as a background job: `POST` returns `{"job_id"}` immediately, and
 | `POST /api/escalations/{id}/resolve` | The doctor confirms a candidate (`name`) or types the medicine (`free_text`). The patient's case is updated and re-checked |
 | `GET /api/testlab` | Run the preset safety cases |
 | `GET /api/demo`, `GET /api/demo/{file}` | The synthetic demo case and its images |
+| `GET /` and any other non-API path | The website (`index.html` for app routes such as `/report`) |
 
 **There is no authentication.** Anyone who can reach the server can read cases and answer as the doctor. Run it on a trusted network.
 
@@ -93,7 +97,7 @@ Evidence: on 5 real handwritten prescriptions Gemma 4 found 21 of 21 medicines a
 | `core/stt.py` | Whisper speech to text (WAV, m4a, webm) |
 | `core/store.py` | SQLite store for cases, doctor chats and messages |
 | `core/testlab.py` | Preset safety cases |
-| `scripts/` | `build_data.py` (rebuild the brand table from the dataset), `make_demo_assets.py`, `warm_cache.py` |
+| `scripts/` | `build_data.py` (rebuild the brand table from the dataset), `make_demo_assets.py`, `warm_cache.py` (run the demo case once so the live demo comes from the Gemma cache) |
 
 ## Tests
 
@@ -101,7 +105,7 @@ Evidence: on 5 real handwritten prescriptions Gemma 4 found 21 of 21 medicines a
 .venv/bin/python -m pytest -q
 ```
 
-132 offline tests cover the API flows, matching, confidence, safety rules, triage, the Gemma client (with faked backends) and audio decoding. Set `RUN_LIVE=1` to also call Gemma for real.
+134 offline tests cover the API flows, website serving, matching, confidence, safety rules, triage, the Gemma client (with faked backends) and audio decoding. Set `RUN_LIVE=1` to also call Gemma for real.
 
 ## Data
 
