@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment files with secrets
+.env
+.streamlit/secrets.toml
+
+# SQLite databases
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# pytest cache
+.pytest_cache/
+
+# Application cache
+cache/
+
+# Nested git repos (tracked as regular dirs)
+code/aushnexa/.git
+code/_data_src/Indian-Medicine-Dataset/.git

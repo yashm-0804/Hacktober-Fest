@@ -1,0 +1,29 @@
+0fmQCjuf.jpg run 1: 39.3s 
+62qlxpSw.jpg run 1: 67.8s 
+   - Cefepime                     raw=Cefepime 1g I.V BD             conf=1.0 unsure=False
+   - DYNAPAR                      raw=DYNAPAR 1amp I.V Stat          conf=1.0 unsure=False
+   - Omez                         raw=Omez 40mg I.V OD               conf=1.0 unsure=False
+   - Emeset                       raw=Emeset 4mg I.V TDS             conf=1.0 unsure=False
+   - Perfalgan                    raw=Perfalgan 1g I.V TDS           conf=1.0 unsure=False
+   - DWS/RL                       raw=DWS/RL @ 150 ml/hr             conf=0.9 unsure=False
+0waC2LqO.jpg run 1: 125.4s 
+   - Celemax                      raw=Tab. Celemax one tablet daily x 3 months conf=0.9 unsure=False
+   - Lumia                        raw=Lumia 60k Vit once a week x 8 weeks (2 more weeks) Lumia once a month x one year conf=0.8 unsure=False
+   - Altraday                     raw=Cap. Altraday one at night x 10 days SOS conf=0.8 unsure=False
+2nPPipXy.jpg run 1: 197.4s 
+   - Allegra                      raw=Syrup Allegra: FEXOFENADINE(30 MG) 5 ml - Twice a day X 4 Days conf=1.0 unsure=False
+   - Ambrolite S                  raw=Syrup Ambrolite S: AMBROXOL HYDROCHLORIDE(30 MG) + GUAIPHENESIN(50 MG) + TERBUTALINE SULPHATE(1.25 MG) + MENTHOL(0.5MG) 5 ml - Twice a day X 3 Days conf=1.0 unsure=False
+   - Azithral 200                 raw=Suspension Azithral 200: AZITHROMYCIN(200 MG) 3.5 ml - Once a day Till 21/2/20 conf=1.0 unsure=False
+   - Looz                         raw=Suspension Looz: LACTULOSE(10 GM) 10 ml - Once a day X 1 Month conf=1.0 unsure=False
+   - Pegura-17g                   raw=Sachet Pegura-17g: POLYETHELENE GLYCOL 3350(17GM) 1 sachet - Once a day X 1 Month Mixed in 200 ml water or juice conf=1.0 unsure=False
+   - Zincovit                     raw=Syrup Zincovit: VIT B12(0.5 MCG) + L-LYSINE(5 MG) + VIT D3(100 IU) + VIT B1(0.75 MG) + VIT B2(0.75 MG) + VIT B6(0.5 ... 5 ml - Once a day X 1 Month conf=1.0 unsure=False
+   - Orofer XT                    raw=Suspension Orofer XT: FOLIC ACID (VIT B9)(550 MCG) + ELEMENTAL IRON(30 MG) 5 ml - Once a day X 3 Months conf=1.0 unsure=False
+   - Montair LC                   raw=8. Syr MONTAIRLC @ 1ml at bedtime X 1month conf=0.8 unsure=True
+   - Levosalbutamol plus Budesonide raw=Nebulise with Levosalbutamol(0.63) plus Budesonide(0.5mg) twice a day for 5 days conf=0.9 unsure=False
+4J7Jyojz.jpg run 1: 210.6s 
+   - Vitamin D                    raw=Visyneral - 2 drops o. sun BD  conf=0.4 unsure=True
+   - Evion                        raw=Evion drops 500                conf=0.9 unsure=False
+   - Osteocalcium                 raw=Syp. Osteocalcium SUN TDS      conf=0.9 unsure=False
+   - Tobramycin                   raw=Tobramycin eye drops 2^ in each eye TDS x 5 days conf=0.9 unsure=False
+
+Saved /Users/yashmehta/Desktop/projects/Hacktober Fest/code/spikes/handwriting/results_gemma-4-26b-a4b-it.json

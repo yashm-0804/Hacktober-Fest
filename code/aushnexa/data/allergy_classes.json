@@ -1,0 +1,50 @@
+{
+  "_note": "Salt keywords per allergy class. A keyword matches a salt name as a whole word (e.g. 'cefuroxime' matches 'cefuroxime axetil'). caution_salts raise a REVIEW, not a HIGH alert.",
+  "classes": {
+    "penicillin": {
+      "label": "penicillin",
+      "aliases": ["penicillins", "pcn", "beta-lactam", "beta lactam"],
+      "salts": ["amoxicillin", "amoxycillin", "ampicillin", "cloxacillin", "dicloxacillin", "flucloxacillin", "piperacillin", "penicillin", "benzathine", "benzylpenicillin", "phenoxymethylpenicillin", "oxacillin", "ticarcillin"],
+      "caution_salts": []
+    },
+    "cephalosporin": {
+      "label": "cephalosporin",
+      "aliases": ["cephalosporins", "cephalosporine"],
+      "salts": ["cefuroxime", "cefixime", "cefpodoxime", "ceftriaxone", "cefalexin", "cephalexin", "cefepime", "cefadroxil", "cefotaxime", "ceftazidime", "cefoperazone", "cefazolin", "cefdinir", "cefprozil", "cefaclor", "ceftaroline", "cefditoren"],
+      "caution_salts": []
+    },
+    "sulfa": {
+      "label": "sulfa (sulfonamide)",
+      "aliases": ["sulpha", "sulfonamide", "sulfonamides", "sulphonamide", "sulfa drugs", "sulpha drugs"],
+      "salts": ["sulfamethoxazole", "sulphamethoxazole", "sulfasalazine", "sulphasalazine", "sulfadiazine", "sulfacetamide", "sulfadoxine"],
+      "caution_salts": ["hydrochlorothiazide", "chlorthalidone", "indapamide", "furosemide", "frusemide", "torsemide", "acetazolamide", "celecoxib"]
+    },
+    "nsaid": {
+      "label": "NSAID",
+      "aliases": ["nsaids", "painkiller", "painkillers", "anti-inflammatory"],
+      "salts": ["ibuprofen", "diclofenac", "aceclofenac", "naproxen", "mefenamic acid", "aspirin", "ketorolac", "nimesulide", "etoricoxib", "piroxicam", "indomethacin", "ketoprofen", "flurbiprofen", "lornoxicam", "celecoxib", "dexketoprofen"],
+      "caution_salts": []
+    },
+    "macrolide": {
+      "label": "macrolide",
+      "aliases": ["macrolides"],
+      "salts": ["azithromycin", "clarithromycin", "erythromycin", "roxithromycin"],
+      "caution_salts": []
+    },
+    "fluoroquinolone": {
+      "label": "fluoroquinolone",
+      "aliases": ["fluoroquinolones", "quinolone", "quinolones"],
+      "salts": ["ciprofloxacin", "levofloxacin", "ofloxacin", "norfloxacin", "moxifloxacin", "gemifloxacin", "prulifloxacin"],
+      "caution_salts": []
+    },
+    "aspirin": {
+      "label": "aspirin",
+      "aliases": ["acetylsalicylic acid", "salicylate", "salicylates"],
+      "salts": ["aspirin", "acetylsalicylic acid"],
+      "caution_salts": []
+    }
+  },
+  "cross_reactivity": [
+    {"allergy": "penicillin", "class": "cephalosporin", "note": "about 1–2% cross-reactivity; confirm with doctor"}
+  ]
+}

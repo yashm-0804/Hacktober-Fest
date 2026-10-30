@@ -1,0 +1,1013 @@
+[
+ {
+  "file": "rx01.jpg",
+  "seconds": 92.3,
+  "error": null,
+  "meds": [
+   {
+    "read": {
+     "raw_text": "Zincovit tab 10",
+     "brand_or_drug": "Zincovit",
+     "form": "tablet",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Zinclovil Cream",
+      "clobetasol+gentamicin",
+      82.4
+     ],
+     [
+      "Nicovit Tablet",
+      "niacinamide",
+      80.0
+     ],
+     [
+      "Zincort Cream",
+      "clobetasol",
+      80.0
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.674,
+    "rival": "Nicovit Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "Rabemac DSR cap 10",
+     "brand_or_drug": "Rabemac DSR",
+     "form": "capsule",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Rabemac-DSR Capsule",
+      "domperidone+rabeprazole",
+      100.0
+     ],
+     [
+      "Rabemac LS Capsule SR",
+      "levosulpiride+rabeprazole",
+      85.7
+     ],
+     [
+      "Paa DSR 30mg/40mg Capsule",
+      "domperidone+pantoprazole",
+      85.5
+     ]
+    ],
+    "band": "HIGH",
+    "value": 1.0,
+    "rival": null
+   },
+   {
+    "read": {
+     "raw_text": "Zentflam 20mg tab 10",
+     "brand_or_drug": "Zentflam",
+     "form": "tablet",
+     "strength": "20mg",
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Dentoflam Tablet",
+      "diclofenac+paracetamol",
+      82.4
+     ],
+     [
+      "Zenflamac 200mg Tablet",
+      "ofloxacin",
+      82.4
+     ],
+     [
+      "Genflam-MR Tablet",
+      "chlorzoxazone+diclofenac",
+      80.0
+     ]
+    ],
+    "band": "LOW",
+    "value": 0.524,
+    "rival": "Zenflamac 200mg Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "Electrolyte powder",
+     "brand_or_drug": "Electrolyte",
+     "form": "other",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Electrolyte P  Infusion",
+      "dextrose+sodium chloride",
+      95.0
+     ],
+     [
+      "Electrolyte M 5% Infusion",
+      "dextrose",
+      95.0
+     ],
+     [
+      "Electrogyl Suspension",
+      "metronidazole+norfloxacin",
+      76.2
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.8,
+    "rival": "Electrolyte M 5% Infusion"
+   },
+   {
+    "read": {
+     "raw_text": "Cital. Syr.",
+     "brand_or_drug": "Cital",
+     "form": "syrup",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": true
+    },
+    "top3": [
+     [
+      "Citalexia Syrup",
+      "piracetam",
+      90.0
+     ],
+     [
+      "Citalo 10 Tablet",
+      "escitalopram oxalate",
+      90.0
+     ],
+     [
+      "Citalin Lite Tablet",
+      "clonazepam+escitalopram oxalate",
+      90.0
+     ]
+    ],
+    "band": "LOW",
+    "value": 0.55,
+    "rival": "Citalo 10 Tablet"
+   }
+  ],
+  "attempts": 1
+ },
+ {
+  "file": "rx02.jpg",
+  "seconds": 367.5,
+  "error": "Gemma (gemini/gemma-4-26b-a4b-it) failed: ServerError: 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}",
+  "meds": [],
+  "attempts": 3
+ },
+ {
+  "file": "rx03.jpg",
+  "seconds": 16.9,
+  "error": null,
+  "meds": [],
+  "attempts": 1
+ },
+ {
+  "file": "rx04.jpg",
+  "seconds": 162.0,
+  "error": null,
+  "meds": [
+   {
+    "read": {
+     "raw_text": "T-Sivast - 10",
+     "brand_or_drug": "Sivast",
+     "form": "tablet",
+     "strength": "10",
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Siasto Tablet",
+      "gabapentin+nortriptyline",
+      88.3
+     ],
+     [
+      "Zivast 10 Tablet",
+      "atorvastatin",
+      88.3
+     ],
+     [
+      "Zivast-AM Tablet",
+      "amlodipine+atorvastatin",
+      82.7
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.733,
+    "rival": "Zivast 10 Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "T-Monofluor - 10",
+     "brand_or_drug": "Monofluor",
+     "form": "tablet",
+     "strength": "10",
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Flunor Tablet",
+      "flupenthixol+nortriptyline",
+      86.8
+     ],
+     [
+      "Monoflox 500mg Tablet",
+      "levofloxacin",
+      78.8
+     ],
+     [
+      "Montflo Syrup",
+      "levocetirizine+montelukast",
+      75.0
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.718,
+    "rival": "Monoflox 500mg Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "0-clarav-650 - 12",
+     "brand_or_drug": "clarav-650",
+     "form": "tablet",
+     "strength": "650 mg",
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Clark 500 Tablet",
+      "clarithromycin",
+      72.7
+     ],
+     [
+      "Laura 600 Tablet",
+      "linezolid",
+      72.7
+     ],
+     [
+      "Xclav 625 Tablet",
+      "amoxicillin+clavulanic acid",
+      72.7
+     ]
+    ],
+    "band": "LOW",
+    "value": 0.427,
+    "rival": "Laura 600 Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "T-Handy-something - 10",
+     "brand_or_drug": "Handy-something",
+     "form": "tablet",
+     "strength": "10",
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": true
+    },
+    "top3": [
+     [
+      "Biomethrin Lotion",
+      "permethrin",
+      70.0
+     ],
+     [
+      "Ethino 5mg Tablet",
+      "norethisterone",
+      67.5
+     ],
+     [
+      "Ethmin 1gm Injection",
+      "ceftriaxone",
+      67.5
+     ]
+    ],
+    "band": "LOW",
+    "value": 0.2,
+    "rival": "Ethino 5mg Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "T-Ravipool-D - 10",
+     "brand_or_drug": "Ravipool-D",
+     "form": "tablet",
+     "strength": "10",
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Acio D 10mg/40mg Tablet",
+      "domperidone+pantoprazole",
+      90.5
+     ],
+     [
+      "Traxin D Syrup Sugar Free",
+      "chlorpheniramine maleate+dextromethorphan hydrobromide",
+      90.5
+     ],
+     [
+      "Allerhin D Plus Syrup",
+      "ambroxol+dextromethorphan hydrobromide",
+      90.5
+     ]
+    ],
+    "band": "HIGH",
+    "value": 0.905,
+    "rival": null
+   },
+   {
+    "read": {
+     "raw_text": "Syrup [illegible] - 10ml",
+     "brand_or_drug": "[illegible]",
+     "form": "syrup",
+     "strength": "10ml",
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": true
+    },
+    "top3": [
+     [
+      "Lulibless Cream",
+      "luliconazole",
+      66.7
+     ],
+     [
+      "Glerelin 22.5mg Pre Filled Syringe",
+      "leuprolide",
+      66.5
+     ],
+     [
+      "Willgo CR Tablet",
+      "aceclofenac",
+      65.5
+     ]
+    ],
+    "band": "LOW",
+    "value": 0.317,
+    "rival": null
+   }
+  ],
+  "attempts": 1
+ },
+ {
+  "file": "rx05.jpg",
+  "seconds": 104.2,
+  "error": null,
+  "meds": [
+   {
+    "read": {
+     "raw_text": "ceftriaxone",
+     "brand_or_drug": "ceftriaxone",
+     "form": "other",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "StayHappi Ceftriaxone+Sulbactam 1000mg/500mg Injection",
+      "ceftriaxone+sulbactam",
+      90.0
+     ],
+     [
+      "Septriaxone Injection",
+      "ceftriaxone",
+      81.8
+     ],
+     [
+      "Ceftaxon-TZ 1.125 Injection",
+      "ceftriaxone+tazobactum",
+      72.7
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.75,
+    "rival": "Septriaxone Injection"
+   },
+   {
+    "read": {
+     "raw_text": "IV Dexamethasone",
+     "brand_or_drug": "Dexamethasone",
+     "form": "injection",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Dexamethasone 4mg Injection",
+      "dexamethasone",
+      95.0
+     ],
+     [
+      "DavaIndia Moxifloxacin+Dexamethasone Eye Drop",
+      "dexamethasone+moxifloxacin",
+      90.0
+     ],
+     [
+      "Metasone F  Cream",
+      "fusidic acid+mometasone",
+      69.6
+     ]
+    ],
+    "band": "HIGH",
+    "value": 0.95,
+    "rival": null
+   }
+  ],
+  "attempts": 1
+ },
+ {
+  "file": "rx06.jpg",
+  "seconds": 79.7,
+  "error": null,
+  "meds": [
+   {
+    "read": {
+     "raw_text": "Dexa met...",
+     "brand_or_drug": "Dexamethasone",
+     "form": "other",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": true
+    },
+    "top3": [
+     [
+      "Dexamethasone 4mg Injection",
+      "dexamethasone",
+      95.0
+     ],
+     [
+      "DavaIndia Moxifloxacin+Dexamethasone Eye Drop",
+      "dexamethasone+moxifloxacin",
+      90.0
+     ],
+     [
+      "Metasone F  Cream",
+      "fusidic acid+mometasone",
+      69.6
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.75,
+    "rival": null
+   },
+   {
+    "read": {
+     "raw_text": "Cefazoran inj 1 gm",
+     "brand_or_drug": "Cefazolin",
+     "form": "injection",
+     "strength": "1 gm",
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Cefolin Tablet",
+      "cefixime",
+      87.5
+     ],
+     [
+      "Cezolin 1gm Injection",
+      "cefazolin",
+      86.8
+     ],
+     [
+      "Zoline Eye Drop",
+      "hydroxypropylmethylcellulose+naphazoline",
+      81.8
+     ]
+    ],
+    "band": "LOW",
+    "value": 0.575,
+    "rival": "Cezolin 1gm Injection"
+   },
+   {
+    "read": {
+     "raw_text": "Perflu?gan bottle",
+     "brand_or_drug": "Perflu?gan",
+     "form": "other",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": null,
+     "unsure": true
+    },
+    "top3": [
+     [
+      "Perfalgan 500mg Injection",
+      "paracetamol",
+      75.8
+     ],
+     [
+      "Preflut-AZ Nasal Spray",
+      "azelastine+fluticasone propionate",
+      70.0
+     ],
+     [
+      "Spiroflut A Nasal Spray",
+      "azelastine+fluticasone furoate",
+      66.7
+     ]
+    ],
+    "band": "LOW",
+    "value": 0.558,
+    "rival": null
+   }
+  ],
+  "attempts": 1
+ },
+ {
+  "file": "rx07.jpg",
+  "seconds": 378.3,
+  "error": "Gemma (gemini/gemma-4-26b-a4b-it) failed: ServerError: 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}",
+  "meds": [],
+  "attempts": 3
+ },
+ {
+  "file": "rx08.jpg",
+  "seconds": 24.2,
+  "error": null,
+  "meds": [],
+  "attempts": 2
+ },
+ {
+  "file": "rx09.jpg",
+  "seconds": 86.5,
+  "error": null,
+  "meds": [
+   {
+    "read": {
+     "raw_text": "Tab Stamlo 5mg - 30 day",
+     "brand_or_drug": "Stamlo",
+     "form": "tablet",
+     "strength": "5mg",
+     "dose_and_frequency": null,
+     "duration": "30 day",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Stamlo 5 Tablet",
+      "amlodipine",
+      100.0
+     ],
+     [
+      "Stamlo-T Tablet",
+      "amlodipine+telmisartan",
+      100.0
+     ],
+     [
+      "Stamlo D Tablet",
+      "amlodipine+hydrochlorothiazide",
+      100.0
+     ]
+    ],
+    "band": "HIGH",
+    "value": 1.0,
+    "rival": null
+   },
+   {
+    "read": {
+     "raw_text": "Tab. Arvant syp - 30 day",
+     "brand_or_drug": "Arvant",
+     "form": "syrup",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": "30 day",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Avantaz Tablet",
+      "anastrozole",
+      76.9
+     ],
+     [
+      "Acerant-MR Tablet",
+      "aceclofenac+paracetamol",
+      76.9
+     ],
+     [
+      "Arvast 10 Tablet",
+      "rosuvastatin",
+      75.0
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.619,
+    "rival": "Acerant-MR Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "Tab. Thyrox 50mcg - 30 days",
+     "brand_or_drug": "Thyrox",
+     "form": "tablet",
+     "strength": "50mcg",
+     "dose_and_frequency": null,
+     "duration": "30 days",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Thyrox 50 Tablet",
+      "thyroxine",
+      100.0
+     ],
+     [
+      "Throx Suspension",
+      "roxithromycin",
+      95.9
+     ],
+     [
+      "Anti-Thyrox 5 Tablet",
+      "carbimazole",
+      90.0
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.85,
+    "rival": "Throx Suspension"
+   },
+   {
+    "read": {
+     "raw_text": "Tab B-plex fort - 30 days",
+     "brand_or_drug": "B-plex fort",
+     "form": "tablet",
+     "strength": null,
+     "dose_and_frequency": null,
+     "duration": "30 days",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "B-KOF Expectorant",
+      "guaifenesin+terbutaline",
+      85.5
+     ],
+     [
+      "B Cillin CV Forte 400mg/57mg Tablet",
+      "amoxicillin+clavulanic acid",
+      85.5
+     ],
+     [
+      "Ducof-B Syrup Sugar Free",
+      "ambroxol+guaifenesin",
+      85.5
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.705,
+    "rival": "B Cillin CV Forte 400mg/57mg Tablet"
+   }
+  ],
+  "attempts": 1
+ },
+ {
+  "file": "rx10.jpg",
+  "seconds": 41.9,
+  "error": null,
+  "meds": [
+   {
+    "read": {
+     "raw_text": "SYP CALPOL (250/5) 4ML Q6H x 3 d",
+     "brand_or_drug": "CALPOL",
+     "form": "syrup",
+     "strength": "250/5",
+     "dose_and_frequency": "4ML Q6H",
+     "duration": "3 d",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Calpol 250mg Tablet",
+      "paracetamol",
+      95.9
+     ],
+     [
+      "Calpol T  Tablet",
+      "paracetamol/acetaminophen+tramadol",
+      95.0
+     ],
+     [
+      "Calpol Plus 400 mg/325 mg Suspension",
+      "ibuprofen+paracetamol",
+      90.0
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.809,
+    "rival": null
+   },
+   {
+    "read": {
+     "raw_text": "SYP DELCON 3 ML TDS x 5d",
+     "brand_or_drug": "DELCON",
+     "form": "syrup",
+     "strength": null,
+     "dose_and_frequency": "3 ML TDS",
+     "duration": "5d",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Delcon Syrup",
+      "chlorpheniramine maleate+phenylephrine",
+      100.0
+     ],
+     [
+      "Decon Injection",
+      "dexamethasone",
+      90.9
+     ],
+     [
+      "Delcon LM Syrup",
+      "levocetirizine+montelukast",
+      90.0
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.85,
+    "rival": "Decon Injection"
+   },
+   {
+    "read": {
+     "raw_text": "SYP LEVOLIN 3 ML TDS x 5d",
+     "brand_or_drug": "LEVOLIN",
+     "form": "syrup",
+     "strength": null,
+     "dose_and_frequency": "3 ML TDS",
+     "duration": "5d",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Levolin 1 Tablet",
+      "levosalbutamol",
+      95.0
+     ],
+     [
+      "Levolin 5 Tablet",
+      "levocetirizine",
+      95.0
+     ],
+     [
+      "Levolink Oral Suspension",
+      "levofloxacin",
+      93.3
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.8,
+    "rival": "Levolin 5 Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "SYP MEFTAL-P (100/5) 3 ML SOS",
+     "brand_or_drug": "MEFTAL-P",
+     "form": "syrup",
+     "strength": "100/5",
+     "dose_and_frequency": "3 ML SOS",
+     "duration": null,
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Meftal-P Suspension",
+      "mefenamic acid",
+      100.0
+     ],
+     [
+      "Meftal-MR Tablet",
+      "mefenamic acid+tizanidine",
+      95.0
+     ],
+     [
+      "Mefastal P Syrup",
+      "mefenamic acid+paracetamol",
+      93.9
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.85,
+    "rival": "Mefastal P Syrup"
+   }
+  ],
+  "attempts": 1
+ },
+ {
+  "file": "rx11.jpg",
+  "seconds": 420.1,
+  "error": "Gemma (gemini/gemma-4-26b-a4b-it) failed: ReadTimeout: The read operation timed out",
+  "meds": [],
+  "attempts": 3
+ },
+ {
+  "file": "rx12.jpg",
+  "seconds": 419.6,
+  "error": "Gemma (gemini/gemma-4-26b-a4b-it) failed: ServerError: 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}",
+  "meds": [],
+  "attempts": 3
+ },
+ {
+  "file": "rx13.jpg",
+  "seconds": 285.1,
+  "error": "Gemma (gemini/gemma-4-26b-a4b-it) failed: ServerError: 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}",
+  "meds": [],
+  "attempts": 3
+ },
+ {
+  "file": "rx14.jpg",
+  "seconds": 84.0,
+  "error": null,
+  "meds": [
+   {
+    "read": {
+     "raw_text": "Tab SIZODON PLUS",
+     "brand_or_drug": "SIZODON PLUS",
+     "form": "tablet",
+     "strength": null,
+     "dose_and_frequency": "1 morning 1 night",
+     "duration": "6 months",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Sizodon Plus Tablet",
+      "risperidone+trihexyphenidyl",
+      100.0
+     ],
+     [
+      "Ccs Plus Eye Drop",
+      "carboxymethylcellulose+glycerin",
+      85.5
+     ],
+     [
+      "Melamin Plus Combipack Injection",
+      "folic acid+methylcobalamin",
+      85.5
+     ]
+    ],
+    "band": "HIGH",
+    "value": 1.0,
+    "rival": null
+   },
+   {
+    "read": {
+     "raw_text": "Tab Quetiapin 200mg",
+     "brand_or_drug": "Quetiapin",
+     "form": "tablet",
+     "strength": "200mg",
+     "dose_and_frequency": "1 night",
+     "duration": "6 months",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Qutipin 200 Tablet",
+      "quetiapine",
+      92.5
+     ],
+     [
+      "Valpin Syrup",
+      "sodium valproate",
+      77.0
+     ],
+     [
+      "Quecain Syrup",
+      "magaldrate+simethicone",
+      75.0
+     ]
+    ],
+    "band": "HIGH",
+    "value": 0.925,
+    "rival": null
+   },
+   {
+    "read": {
+     "raw_text": "tab ATIVAN (Lorazepam) 2mg",
+     "brand_or_drug": "ATIVAN (Lorazepam)",
+     "form": "tablet",
+     "strength": "2mg",
+     "dose_and_frequency": "1 night",
+     "duration": "6 months",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Tanzepam 2mg Tablet",
+      "lorazepam",
+      77.0
+     ],
+     [
+      "Clozepam 2mg Tablet",
+      "clonazepam",
+      74.2
+     ],
+     [
+      "Benzopam 2mg Tablet",
+      "zolpidem",
+      65.0
+     ]
+    ],
+    "band": "MEDIUM",
+    "value": 0.62,
+    "rival": "Clozepam 2mg Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "tab Rivotril 0.5mg (Clonazepam)",
+     "brand_or_drug": "Rivotril (Clonazepam)",
+     "form": "tablet",
+     "strength": "0.5mg",
+     "dose_and_frequency": "1 night",
+     "duration": "6 months",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "StayHappi Clonazepam+Escitalopram Oxalate 0.25mg/10mg Tablet",
+      "clonazepam+escitalopram oxalate",
+      85.5
+     ],
+     [
+      "DR Best Clonazepam 0.5 Tablet",
+      "clonazepam",
+      75.3
+     ],
+     [
+      "Clonaxpax P 0.5 mg/20 mg Tablet",
+      "clonazepam+propranolol",
+      61.1
+     ]
+    ],
+    "band": "LOW",
+    "value": 0.555,
+    "rival": "DR Best Clonazepam 0.5 Tablet"
+   },
+   {
+    "read": {
+     "raw_text": "tab SERTA 50mg",
+     "brand_or_drug": "SERTA",
+     "form": "tablet",
+     "strength": "50mg",
+     "dose_and_frequency": "1 night",
+     "duration": "6 months",
+     "unsure": false
+    },
+    "top3": [
+     [
+      "Serta 50 Tablet",
+      "sertraline",
+      100.0
+     ],
+     [
+      "Sertamax 0.5mg/50mg Tablet",
+      "alprazolam+sertraline",
+      95.0
+     ],
+     [
+      "Sertamid Cream",
+      "sertaconazole",
+      90.0
+     ]
+    ],
+    "band": "HIGH",
+    "value": 1.0,
+    "rival": null
+   }
+  ],
+  "attempts": 1
+ },
+ {
+  "file": "rx15.jpg",
+  "seconds": 435.3,
+  "error": "Gemma (gemini/gemma-4-26b-a4b-it) failed: ReadTimeout: The read operation timed out",
+  "meds": [],
+  "attempts": 3
+ }
+]

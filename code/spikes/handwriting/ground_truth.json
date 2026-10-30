@@ -1,0 +1,24 @@
+{
+  "_note": "Hand-read by the main session from the images; brand spellings verified by eye, not by a pharmacist. Images: huggingface.co/datasets/tavishm/100-handwritten-medical-records (no license stated, internal testing only, not for the demo).",
+  "2nPPipXy.jpg": {
+    "label": "Mostly printed + 1 handwritten line (baseline)",
+    "medicines": ["Allegra syrup 5 ml BD x4d", "Ambrolite S syrup 5 ml BD x3d", "Azithral 200 suspension 3.5 ml OD", "Looz suspension 10 ml OD x1 month", "Pegura-17g sachet OD x1 month", "Zincovit syrup 5 ml OD x1 month", "Orofer XT suspension 5 ml OD x3 months", "Montair LC syrup 5 ml at bedtime x1 month (HANDWRITTEN)"]
+  },
+  "0waC2LqO.jpg": {
+    "label": "Messy handwriting, outpatient (vitamin D deficiency)",
+    "medicines": ["Calcimax tablet 1 daily x3 months", "Lumia 60K (cholecalciferol 60,000 IU) once a week x8 weeks, then once a month x1 year", "Altraday capsule 1 at night x10 days, then SOS"]
+  },
+  "62qlxpSw.jpg": {
+    "label": "Messy handwriting, inpatient IV orders, with one struck-out drug",
+    "medicines": ["Cefepime 1 g IV BD", "Dynapar 1 amp IV stat", "Omez 40 mg IV OD", "Emeset 4 mg IV TDS", "Perfalgan 1 g IV TDS", "DNS/RL IV fluids @150 ml/hr"],
+    "should_not_appear": ["Oflox 200 mg (struck out)"]
+  },
+  "4J7Jyojz.jpg": {
+    "label": "Messy handwriting, newborn",
+    "medicines": ["Visyneral-Z drops 0.5 ml BD", "Evion drops 5 drops OD", "Ostocalcium syrup 5 ml TDS", "Tobramycin eye drops 2 drops each eye TDS x5 days"]
+  },
+  "0fmQCjuf.jpg": {
+    "label": "Handwritten clinical notes with NO medicines (hallucination test)",
+    "medicines": []
+  }
+}

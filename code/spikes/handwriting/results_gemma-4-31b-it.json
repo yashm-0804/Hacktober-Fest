@@ -1,0 +1,124 @@
+{
+  "model": "gemma-4-31b-it",
+  "runs": 1,
+  "images": {
+    "2nPPipXy.jpg": {
+      "label": "Mostly printed + 1 handwritten line (baseline)",
+      "truth": [
+        "Allegra syrup 5 ml BD x4d",
+        "Ambrolite S syrup 5 ml BD x3d",
+        "Azithral 200 suspension 3.5 ml OD",
+        "Looz suspension 10 ml OD x1 month",
+        "Pegura-17g sachet OD x1 month",
+        "Zincovit syrup 5 ml OD x1 month",
+        "Orofer XT suspension 5 ml OD x3 months",
+        "Montair LC syrup 5 ml at bedtime x1 month (HANDWRITTEN)"
+      ],
+      "runs": [
+        {
+          "seconds": 38.5,
+          "error": "ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}",
+          "parsed": null,
+          "raw": ""
+        }
+      ]
+    },
+    "0waC2LqO.jpg": {
+      "label": "Messy handwriting, outpatient (vitamin D deficiency)",
+      "truth": [
+        "Calcimax tablet 1 daily x3 months",
+        "Lumia 60K (cholecalciferol 60,000 IU) once a week x8 weeks, then once a month x1 year",
+        "Altraday capsule 1 at night x10 days, then SOS"
+      ],
+      "runs": [
+        {
+          "seconds": 97.0,
+          "error": null,
+          "parsed": {
+            "medicines": [
+              {
+                "raw_text": "Tab. Calcimax one tablet daily X 3 months",
+                "brand_or_drug": "Calcimax",
+                "form": "tablet",
+                "strength": null,
+                "dose_and_frequency": "one tablet daily",
+                "duration": "3 months",
+                "confidence": 1.0,
+                "unsure": false
+              },
+              {
+                "raw_text": "Lumia 60 k Unit once a week x 8 weeks, (2 more weeks) Lumia once a month x one year",
+                "brand_or_drug": "Lumia",
+                "form": "other",
+                "strength": "60 k Unit",
+                "dose_and_frequency": "once a week then once a month",
+                "duration": "8-10 weeks then one year",
+                "confidence": 1.0,
+                "unsure": false
+              },
+              {
+                "raw_text": "Cap. Altroday one at night x 10 days",
+                "brand_or_drug": "Altroday",
+                "form": "capsule",
+                "strength": null,
+                "dose_and_frequency": "one at night",
+                "duration": "10 days",
+                "confidence": 1.0,
+                "unsure": false
+              }
+            ]
+          },
+          "raw": null
+        }
+      ]
+    },
+    "62qlxpSw.jpg": {
+      "label": "Messy handwriting, inpatient IV orders, with one struck-out drug",
+      "truth": [
+        "Cefepime 1 g IV BD",
+        "Dynapar 1 amp IV stat",
+        "Omez 40 mg IV OD",
+        "Emeset 4 mg IV TDS",
+        "Perfalgan 1 g IV TDS",
+        "DNS/RL IV fluids @150 ml/hr"
+      ],
+      "runs": [
+        {
+          "seconds": 45.4,
+          "error": "ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}",
+          "parsed": null,
+          "raw": ""
+        }
+      ]
+    },
+    "4J7Jyojz.jpg": {
+      "label": "Messy handwriting, newborn",
+      "truth": [
+        "Visyneral-Z drops 0.5 ml BD",
+        "Evion drops 5 drops OD",
+        "Ostocalcium syrup 5 ml TDS",
+        "Tobramycin eye drops 2 drops each eye TDS x5 days"
+      ],
+      "runs": [
+        {
+          "seconds": 43.1,
+          "error": "ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}",
+          "parsed": null,
+          "raw": ""
+        }
+      ]
+    },
+    "0fmQCjuf.jpg": {
+      "label": "Handwritten clinical notes with NO medicines (hallucination test)",
+      "truth": [],
+      "runs": [
+        {
+          "seconds": 28.5,
+          "error": "ServerError: 500 INTERNAL. {'error': {'code': 500, 'message': 'Internal error encountered.', 'status': 'INTERNAL'}}",
+          "parsed": null,
+          "raw": ""
+        }
+      ]
+    }
+  }
+}

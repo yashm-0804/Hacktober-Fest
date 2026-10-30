@@ -1,0 +1,124 @@
+[
+  {
+    "id": "chest_pain",
+    "level": "EMERGENCY",
+    "message": "Chest pain or pressure can be a heart attack. Call 108 / 112 now. Do not drive yourself.",
+    "any_of": ["chest pain", "chest pressure", "chest tightness", "tight chest", "tightness in * chest", "pain in * chest",
+               "pressure in * chest", "chest hurts", "chest is hurting", "chest is paining", "heart attack",
+               "seene mein dard", "seene me dard", "sine mein dard", "sine me dard", "seene mein dabav", "chhati mein dard",
+               "chhati me dard", "chati mein dard", "chati me dard", "सीने में दर्द", "छाती में दर्द", "सीने में दबाव", "सीने में जकड़न", "سینے میں درد"]
+  },
+  {
+    "id": "breathing",
+    "level": "EMERGENCY",
+    "message": "Difficulty breathing is an emergency. Call 108 / 112 now.",
+    "any_of": ["difficulty breathing", "difficulty in breathing", "trouble breathing", "hard to breathe", "struggling to breathe",
+               "can't breathe", "cant breathe", "cannot breathe", "unable to breathe", "not able to breathe", "short of breath", "shortness of breath",
+               "breathless", "breathlessness", "gasping", "choking",
+               "saans lene mein takleef", "saans lene me takleef", "saans lene mein dikkat", "saans lene me dikkat",
+               "saans nahi aa rahi", "saans nahi le pa", "saans phool", "sans lene mein takleef", "sans lene me takleef",
+               "सांस लेने में तकलीफ", "सांस लेने में दिक्कत", "साँस लेने में तकलीफ", "सांस नहीं", "सांस फूल", "سانس لینے میں"]
+  },
+  {
+    "id": "unconscious",
+    "level": "EMERGENCY",
+    "message": "Fainting or unconsciousness needs emergency care. Call 108 / 112 now.",
+    "any_of": ["fainted", "fainting", "passed out", "unconscious", "collapsed", "not waking up", "unresponsive",
+               "blacked out", "behosh", "behoshi", "be hosh", "होश नहीं", "बेहोश", "بے ہوش", "بےہوش"]
+  },
+  {
+    "id": "stroke",
+    "level": "EMERGENCY",
+    "message": "One-sided weakness, a drooping face or slurred speech can be a stroke. Call 108 / 112 now. Every minute counts.",
+    "any_of": ["one side weak", "one side of my body", "one sided weakness", "one-sided weakness", "weakness on one side",
+               "weak on one side", "numb on one side", "numbness on one side", "face droop", "face drooping", "drooping face",
+               "face is drooping", "mouth droop", "slurred speech", "speech is slurred", "slurring", "can't speak properly",
+               "cannot speak", "trouble speaking", "sudden numbness", "stroke", "lakwa", "laqwa", "muh tedha", "munh tedha",
+               "लकवा", "मुंह टेढ़ा"]
+  },
+  {
+    "id": "worst_headache",
+    "level": "EMERGENCY",
+    "message": "A sudden, very severe headache (the worst of your life) can be bleeding in the brain. Call 108 / 112 now.",
+    "any_of": ["worst headache", "sudden severe headache", "sudden terrible headache", "thunderclap headache",
+               "sudden worst headache", "sabse tez sir dard", "sabse bura sir dard", "अचानक तेज सिर दर्द"]
+  },
+  {
+    "id": "meningitis",
+    "level": "EMERGENCY",
+    "message": "Fever with a stiff neck (and headache) can be meningitis. Go to a hospital now or call 108.",
+    "all_of": [
+      ["stiff neck", "neck stiffness", "neck is stiff", "can't bend my neck", "cannot bend my neck", "gardan akad",
+       "gardan mein akdan", "गर्दन अकड़"],
+      ["fever", "temperature", "bukhar", "bukhaar", "bhukhar", "बुखार", "ज्वर"]
+    ]
+  },
+  {
+    "id": "vomiting_blood",
+    "level": "EMERGENCY",
+    "message": "Vomiting blood is an emergency. Call 108 / 112 now.",
+    "any_of": ["vomiting blood", "vomited blood", "vomit blood", "blood in vomit", "blood in my vomit", "throwing up blood",
+               "threw up blood", "coughing up blood", "khoon ki ulti", "khoon ki ultee", "khoon ki ultiyan", "खून की उल्टी"]
+  },
+  {
+    "id": "black_stools",
+    "level": "URGENT",
+    "message": "Black or bloody stools can mean bleeding in the gut. See a doctor today.",
+    "any_of": ["black stool", "black stools", "tarry stool", "black poop", "black motion", "black motions", "blood in stool",
+               "blood in my stool", "bloody stool", "kala mal", "kaala mal", "kali potty", "kaali potty", "kala potty",
+               "potty mein khoon", "काला मल", "मल में खून"]
+  },
+  {
+    "id": "severe_abdominal_pain",
+    "level": "URGENT",
+    "message": "Severe stomach pain needs a doctor today. If it is unbearable, or the belly is hard, call 108.",
+    "any_of": ["severe abdominal pain", "severe stomach pain", "severe pain in * stomach", "severe pain in * abdomen",
+               "severe belly pain", "unbearable stomach pain", "unbearable pain in * stomach", "worst stomach pain",
+               "very bad stomach pain", "pet mein tez dard", "pet me tez dard", "pet mein bahut dard", "pet me bahut dard",
+               "pet mein bahut tez dard", "पेट में तेज दर्द", "पेट में बहुत दर्द"]
+  },
+  {
+    "id": "infant_fever",
+    "level": "URGENT",
+    "message": "A baby with a high fever needs a doctor today. A baby under 3 months with any fever, or a baby who is limp or not feeding, needs a hospital now (call 108).",
+    "all_of": [
+      ["baby", "infant", "newborn", "month old", "months old", "month-old", "bachcha", "bacche", "bachche", "shishu",
+       "बच्चा", "बच्चे", "शिशु"],
+      ["fever", "temperature", "bukhar", "bukhaar", "bhukhar", "बुखार"]
+    ]
+  },
+  {
+    "id": "seizure",
+    "level": "EMERGENCY",
+    "message": "A seizure (fit) needs emergency care. Call 108 / 112 now. Keep the person on their side and don't put anything in their mouth.",
+    "any_of": ["seizure", "seizures", "convulsion", "convulsions", "having a fit", "had a fit", "having fits", "fits",
+               "mirgi", "daura pada", "daura pad", "jhatke aa", "दौरा पड़", "मिर्गी"]
+  },
+  {
+    "id": "suicidal",
+    "level": "EMERGENCY",
+    "message": "You are not alone. Call Tele-MANAS 14416 (free, 24x7, many Indian languages) now, or 112 if you are in immediate danger.",
+    "any_of": ["suicidal", "suicide", "kill myself", "killing myself", "end my life", "want to die", "wanna die",
+               "don't want to live", "dont want to live", "self harm", "self-harm", "hurt myself", "harm myself",
+               "marna chahta", "marna chahti", "jeena nahi chahta", "jeena nahi chahti", "khudkushi", "aatmahatya",
+               "atmahatya", "आत्महत्या", "मरना चाहता", "मरना चाहती", "खुदकुशी"]
+  },
+  {
+    "id": "anaphylaxis",
+    "level": "EMERGENCY",
+    "message": "Swelling of the face, lips, tongue or throat can be a severe allergic reaction. Call 108 / 112 now.",
+    "any_of": ["severe allergic reaction", "anaphylaxis", "anaphylactic", "face swelling", "face is swelling", "swollen face",
+               "swelling of * face", "swelling in * face", "throat swelling", "throat is swelling", "swollen throat",
+               "throat closing", "throat is closing", "swelling of * throat", "swollen lips", "lips swelling",
+               "lips are swelling", "swollen tongue", "tongue swelling", "chehra suj", "chehre par sujan", "gala suj",
+               "gale mein sujan", "honth suj", "होंठ सूज", "चेहरा सूज", "गला सूज"]
+  },
+  {
+    "id": "heavy_bleeding",
+    "level": "EMERGENCY",
+    "message": "Heavy bleeding that won't stop is an emergency. Press firmly on the wound and call 108 / 112 now.",
+    "any_of": ["heavy bleeding", "bleeding heavily", "bleeding a lot", "lot of blood", "won't stop bleeding",
+               "wont stop bleeding", "bleeding won't stop", "bleeding wont stop", "bleeding will not stop",
+               "bahut khoon", "khoon ruk nahi", "khoon band nahi", "खून बंद नहीं", "बहुत खून"]
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "_note": "Keyed by salt_key|strengths (strengths in salt_key order). Prices are indicative.",
+  "source": "indicative, AushNexa reference data; verify at janaushadhi.gov.in",
+  "entries": {
+    "paracetamol|650mg": {"generic_name": "Paracetamol 650 mg tablet", "price": 14, "pack": "10 tablets", "units": 10},
+    "ibuprofen+paracetamol|400mg+325mg": {"generic_name": "Ibuprofen 400 mg + Paracetamol 325 mg tablet", "price": 18, "pack": "10 tablets", "units": 10},
+    "domperidone+pantoprazole|30mg+40mg": {"generic_name": "Pantoprazole 40 mg + Domperidone 30 mg capsule", "price": 32, "pack": "10 capsules", "units": 10},
+    "amoxicillin+clavulanic acid|500mg+125mg": {"generic_name": "Amoxicillin 500 mg + Clavulanic acid 125 mg tablet", "price": 65, "pack": "10 tablets", "units": 10},
+    "fexofenadine|120mg": {"generic_name": "Fexofenadine 120 mg tablet", "price": 38, "pack": "10 tablets", "units": 10},
+    "glimepiride+metformin|1mg+500mg": {"generic_name": "Metformin 500 mg + Glimepiride 1 mg tablet", "price": 24, "pack": "10 tablets", "units": 10},
+    "telmisartan|40mg": {"generic_name": "Telmisartan 40 mg tablet", "price": 21, "pack": "10 tablets", "units": 10},
+    "azithromycin|500mg": {"generic_name": "Azithromycin 500 mg tablet", "price": 42, "pack": "5 tablets", "units": 5},
+    "levocetirizine+montelukast|5mg+10mg": {"generic_name": "Montelukast 10 mg + Levocetirizine 5 mg tablet", "price": 34, "pack": "10 tablets", "units": 10},
+    "dicyclomine+mefenamic acid|10mg+250mg": {"generic_name": "Mefenamic acid 250 mg + Dicyclomine 10 mg tablet", "price": 16, "pack": "10 tablets", "units": 10},
+    "atorvastatin|20mg": {"generic_name": "Atorvastatin 20 mg tablet", "price": 26, "pack": "10 tablets", "units": 10},
+    "aspirin|75mg": {"generic_name": "Aspirin 75 mg tablet", "price": 4, "pack": "14 tablets", "units": 14}
+  }
+}
